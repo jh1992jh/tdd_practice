@@ -1,0 +1,91 @@
+* {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  background: darken(#37ccc9, 5%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin mobile {
+  @media (max-width: 840px) {
+    @content;
+  }
+}
+
+/* SEARCHINPUTNAV STYLES */
+.search-input-nav {
+  width: 100%;
+  padding: 1em 0;
+  .search-input-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include mobile {
+    padding: 0;
+    height: 5vh;
+    .search-input-form {
+      height: 100%;
+      input {
+        width: 80%;
+        height: calc(100% - 4px);
+      }
+      button {
+        width: 20%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+/* SHOWMOVIEINFO STYLES */
+.show-movie-info {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+  .movie-info-list {
+    max-width: 30%;
+    padding: 1em;
+    margin: 0 2em;
+    ul li {
+      margin: 0.5em 0;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+
+    h3 {
+      text-align: center;
+    }
+
+    .poster-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      img {
+        margin: auto;
+      }
+    }
+    .movie-info-list {
+      max-width: 100%;
+      padding: 1em;
+    }
+  }
+}
